@@ -2,7 +2,7 @@ const BASE_URL = "http://localhost:8000/api"
 import axios, { AxiosError } from "axios"
 import { APIError } from "../models/Api"
 import {handleGetAccessToken} from "./auth"
-import { useNavigate } from "react-router"
+//import { useNavigate } from "react-router"
 
 export const useAPI = async <TypeDateResponse>(
     endpoint: string,

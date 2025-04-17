@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SelectedList from "./SelectedList";
 import { useRequests } from "../utils/requests";
 import { Employee } from "../models/Employee";
