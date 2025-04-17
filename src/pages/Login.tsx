@@ -23,7 +23,7 @@ export default function Login(){
             
             setLoading(true);
             let response = await handleSignIn(email, password);
-            setLoading(true);
+            setLoading(false);
 
             if(response.detail) {
                 setErrorMessage(response.detail);
