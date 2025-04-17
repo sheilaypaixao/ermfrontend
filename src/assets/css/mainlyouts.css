@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+html, body{
+    width: 100%;
+    height: 100%;
+    background-color: #070C27;
+    color:rgba(203, 204, 210);
+}
+
+.loading{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top:0;
+    background-color: rgba(17, 22, 51, 0.8);
+    align-content: center;
+    z-index: 1000;
+}
+.loading img{
+    width: 80px;
+    height: auto;
+}
+
+
+#root{
+    width: 100%;
+    height: 100%;
+}
+.container {
+    width: 100%;
+    height: 100%;
+}
+.content {
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+header{
+    background-color: rgba(17, 22, 51, 0.95);
+    color:#9EA4C1;
+}
+
+.sidebar{
+    height: 100%;
+    background-color: rgba(40, 45, 71, 0.5);
+    color: rgba(255, 255, 255, 0.7);
+    box-shadow: 1px 0 0 #272C48;
+    padding: 20px;
+}
+.sidebar h5{
+    text-transform: uppercase;
+    padding-top: 30px;
+    margin-top:30px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 14px;
+    border-top: 1px solid rgba(203, 204, 210, 0.1);
+}
+.sidebar ul{
+    padding-left: 10px;
+}
+.sidebar ul a{
+    color: #fff;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 5px;
+}
+.sidebar ul a:hover{
+    background-color: #111633;
+}
+
+
+table {
+    width: 100%;
+    background-color: #111633;
+}
+table thead{
+    border-top: 1px solid rgba(203, 204, 210, 0.1);
+    font-weight: bold;
+}
+table tr {
+    border-bottom: 1px solid rgba(203, 204, 210, 0.1);
+    border-left: 1px solid rgba(203, 204, 210, 0.1);
+    border-right: 1px solid rgba(203, 204, 210, 0.1);
+}
+table td {
+    padding: 10px;
+}
+
+.card{
+    border-top: 1px solid rgba(203, 204, 210, 0.1);
+    background-color: #111633;
+    border-radius: 30px;
+    border-bottom: 1px solid rgba(203, 204, 210, 0.1);
+    border-left: 1px solid rgba(203, 204, 210, 0.1);
+    border-right: 1px solid rgba(203, 204, 210, 0.1);
+    padding: 30px 40px;
+    margin-bottom: 30px
+}
+.card p{
+    color: rgba(203, 204, 210, 0.5);
+}
+.card h3 {
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+fieldset {
+    margin:15px 0;
+}
+fieldset label {
+    font-weight: bold;
+    display: block;
+}
+fieldset.text input {
+    width: 100%;
+    max-width: 550px;
+}
+input {
+    border: 2px solid rgba(203, 204, 210, 0.1);
+    padding: 5px 10px;
+}
+
+button {
+    color: #57CA22;
+    background-color: rgba(87, 202, 34, 0.1);
+}
+
+.selectedList{
+    position: relative;
+}
+
+.selectedList .wrapList{
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    max-width: 550px;
+    height: 100px;
+    overflow-y: scroll;
+    display: none;
+}
+
+.selectedList .wrapList a{
+    display: block;
+    padding: 5px;
+}
+.selectedList .wrapList a:hover{
+    background-color: #eee;
+}
