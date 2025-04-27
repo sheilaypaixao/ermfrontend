@@ -14,11 +14,13 @@ export default function SelectedList<TypeSelectedList extends {id:number, name: 
     var refInputHidden = useRef<HTMLInputElement>(null);
     //var [field, setField] = useState<any | undefined>(fieldValue);
 
-    console.log(selectedList, lstSearch);
+    //console.log(selectedList, lstSearch);
 
     function handleSearch(e:React.KeyboardEvent){
         let target = e.target as HTMLInputElement;
         let value = target.value;
+
+        refInputHidden.current!.value = "";
 
         setLstSearch(selectedList.filter((group) => group.name.toLowerCase().includes(value.toLowerCase())));
     }

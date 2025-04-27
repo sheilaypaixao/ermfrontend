@@ -69,7 +69,7 @@ export default function GroupAdd(){
 
                 <PermissionsList permissions={permissions} selectedPermissions={selectedPermissions} setSelectedPermissions={setSelectedPermissions} />
                 
-                <p><button type="submit">Salvar</button></p>
+                <p><button className="mt-4" type="submit">Salvar</button></p>
             </form>
         </PermissionMiddleware>
     

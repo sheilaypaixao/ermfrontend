@@ -1,18 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRequests } from "../utils/requests";
 import { useNavigate } from "react-router";
 import { Employee } from "../models/Employee";
 import Loading from "./Loading";
 import ErrorMessage from "./ErrorMessage";
-import { useAuth } from "../utils/auth";
+import PaginationBlock from "./utils/PaginationsBlock";
+import EmployeesList from "./EmployeesList";
 
 export default function EmployeesTable(){
     var [loading, setLoading] = useState(true);
-    const {handlePermissionExist} = useAuth();
     var [errorMessage, setErrorMessage] = useState('');
-    var [lstEmployees, setLstEmployees] = useState<Employee[]>();
+    var [lstEmployees, setLstEmployees] = useState<Employee[]>([]);
     var {getEmployees, deleteEmployee} = useRequests();
     var navigate = useNavigate();
+    var refPagBlock = useRef<any>(null);
 
     const handleGetEmployees = async ()=>{
         setLoading(true);
@@ -50,33 +51,13 @@ export default function EmployeesTable(){
 
                 <ErrorMessage message={errorMessage} />
 
-                <table>
-                    <thead>
-                        <tr>
-                            <td>ID</td>
-                            <td>Nome</td>
-                            <td>Email</td>
-                            <td>Grupo</td>
-                            <td>Ações</td>
-                        </tr>
-                    </thead>
+                <PaginationBlock<Employee> ref={refPagBlock} list={lstEmployees} numberPages={3} numberItens={5}>
+                    
+                    <EmployeesList handleDeleteEmployee={handleDeleteEmployee} handleEditEmployee={handleEditEmployee}/>
 
-                    <tbody>
+                </PaginationBlock>
 
-                        {lstEmployees && lstEmployees!.map((employee)=> (
-                        
-                            <tr key={employee.id}>
-                                <td>{employee.id}</td>
-                                <td>{employee.name}</td>
-                                <td>{employee.email}</td>
-                                <td>
-                                    {handlePermissionExist("change_employee") && <button className="mr-2" onClick={()=> handleEditEmployee(employee.id)}>Editar</button>}
-                                    {handlePermissionExist("delete_employee") && <button onClick={()=> handleDeleteEmployee(employee.id)}>Deletar</button>}
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                    
             </div>
         </>
     );

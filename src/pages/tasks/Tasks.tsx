@@ -5,6 +5,10 @@ import { useRequests } from "../../utils/requests";
 export default function Tasks(){
     var { getTasks } = useRequests();
 
+    async function handleGetTasks(options:object){
+        return await getTasks(options);
+    }
+
     return(
         <>
             <PermissionMiddleware codename="view_task">
@@ -13,7 +17,7 @@ export default function Tasks(){
                     <p>Lista de tarefas, edite ou delete um tarefa:</p>
                 </div>
 
-                <TasksTable handleGet={async ()=>{return await getTasks()}}/>
+                <TasksTable handleGet={handleGetTasks}/>
             </PermissionMiddleware>
         </>
     );

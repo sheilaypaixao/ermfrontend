@@ -3,7 +3,7 @@ import { useAPI } from "./api"
 import { APIGetPermissions } from "../models/Permission";
 import { APIGetGroup, APIGetGroups } from "../models/Group";
 import { APIGetEmployee, APIGetEmployees } from "../models/Employee";
-import { APIGetTask, APIGetTasks } from "../models/Task";
+import { APIGetTask, APIGetTasks, APIGetTaskStatus } from "../models/Task";
 
 // Authentication
 const signIn = async ({ email, password }: { email: string, password: string }) => {
@@ -76,17 +76,22 @@ const deleteEmployee = async (id: number) => {
 }
 
 // Tasks
-const getTasks = async () => {
-    const response = await useAPI<APIGetTasks>('companies/tasks');
+const getTasks = async (options:object) => {
+    const response = await useAPI<APIGetTasks>('companies/tasks', 'GET', options);
     return response;
 }
-const getTasksCreated = async () => {
-    const response = await useAPI<APIGetTasks>('companies/tasks/created');
+const getTasksCreated = async (options:object) => {
+    const response = await useAPI<APIGetTasks>('companies/tasks/created', 'GET', options);
     return response;
 }
 
 const getAnTask = async (id: number) => {
     const response = await useAPI<APIGetTask>(`companies/tasks/${id}`);
+    return response;
+}
+
+const getTasktatus = async () => {
+    const response = await useAPI<APIGetTaskStatus>(`companies/tasks/status`);
     return response;
 }
 
@@ -133,6 +138,7 @@ export const useRequests = () => ({
     deleteEmployee,
 
     // Tasks
+    getTasktatus,
     getTasks,
     getTasksCreated,
     getAnTask,

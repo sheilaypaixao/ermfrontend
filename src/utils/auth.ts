@@ -33,6 +33,7 @@ export function useAuth(){
 
     const handlePermissionExist = (permissionCodename:string)=>{
         //console.log(auth, auth.enterprise!.is_owner);
+        if(!auth.enterprise) return false;
         if(auth.enterprise!.is_owner) return true;
 
         return auth.enterprise!.permissions.some((p) => p.codename = permissionCodename)

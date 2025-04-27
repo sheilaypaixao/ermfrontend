@@ -7,6 +7,10 @@ html, body{
     color:rgba(203, 204, 210);
 }
 
+p{
+    padding: 5px 0;
+}
+
 .loading{
     position: absolute;
     height: 100%;
@@ -42,6 +46,8 @@ header{
 }
 
 .sidebar{
+    overflow-y: scroll;
+    overflow-x: hidden;
     height: 100%;
     background-color: rgba(40, 45, 71, 0.5);
     color: rgba(255, 255, 255, 0.7);
@@ -114,11 +120,11 @@ fieldset label {
     font-weight: bold;
     display: block;
 }
-fieldset.text input {
+fieldset.text input, fieldset.text select {
     width: 100%;
     max-width: 550px;
 }
-input {
+input, select {
     border: 2px solid rgba(203, 204, 210, 0.1);
     padding: 5px 10px;
 }

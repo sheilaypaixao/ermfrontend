@@ -21,6 +21,10 @@ export type TaskDetail = Task & {
     
 }
 
+export type APIGetTaskStatus = {
+    status: TaskStatus[]
+}
+
 export type APIGetTasks = {
     tasks: Task[]
 }
