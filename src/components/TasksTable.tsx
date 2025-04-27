@@ -3,10 +3,8 @@ import { useRequests } from "../utils/requests";
 import { useNavigate } from "react-router";
 import Loading from "./Loading";
 import { Task, TaskStatus } from "../models/Task";
-import DateUtils from "../utils/date";
 import { APIGetTasks } from "../models/Task";
 import ErrorMessage from "./ErrorMessage";
-import { useAuth } from "../utils/auth";
 import TasksList from "./TasksList";
 import PaginationBlock from "./utils/PaginationsBlock";
 

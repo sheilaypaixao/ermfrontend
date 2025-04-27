@@ -1,5 +1,4 @@
-import React, { useRef, useImperativeHandle } from 'react';
-import { useState } from 'react';
+import React, { useImperativeHandle } from 'react';
 
 type Props = {
     ref: any,
