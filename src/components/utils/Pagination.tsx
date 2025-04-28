@@ -22,7 +22,7 @@ function Pagination({ref, list, numberPages, numberItens, currentPage, setCurren
     function getTotalPages(totalItens?:number){
         let totalItens2 = totalItens || list.length;
         var nPagesTotal =  Math.floor(totalItens2/numberItens);
-        console.log(totalItens2, numberItens, nPagesTotal, totalItens2/numberItens);
+        
         return (totalItens2%numberItens==0)? nPagesTotal : nPagesTotal + 1;
     }
 
@@ -68,7 +68,7 @@ function Pagination({ref, list, numberPages, numberItens, currentPage, setCurren
                   }} className={(i == currentPage)?"current":""}> {i} </a></li>);
         }
         
-        if(currentPage != totalPages){
+        if(currentPage != totalPages && totalPages!=0){
             pages.push(<li key={final+1}><a href="#" onClick={(e) => {handleClickPag(currentPage + 1 , e)}}> proximo </a></li>);
         }
         return pages;

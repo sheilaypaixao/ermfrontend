@@ -3,6 +3,7 @@ import { useRef, useImperativeHandle } from 'react';
 import { cloneElement } from 'react';
 
 import Pagination from "./Pagination";
+import '../../assets/css/pagination.css'
 
 type Props<TypeList> = {
 	ref:any,

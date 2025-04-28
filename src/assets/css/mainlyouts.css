@@ -127,6 +127,7 @@ fieldset.text input, fieldset.text select {
 input, select {
     border: 2px solid rgba(203, 204, 210, 0.1);
     padding: 5px 10px;
+    background-color: #070C27;
 }
 
 button {

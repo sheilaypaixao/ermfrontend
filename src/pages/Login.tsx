@@ -53,6 +53,10 @@ export default function Login(){
                     </fieldset>
 
                     <button type="submit" className="w-[100%] mt-1">Login</button>
+
+                    <p className="mt-10">Usuário para login:</p>
+                    <p>Email: sheila@gmail.com</p>
+                    <p>Senha: 12345</p>
                 </form>
             </div>
         </>
